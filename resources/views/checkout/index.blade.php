@@ -20,9 +20,89 @@
                             image="https://tailwindui.com/img/ecommerce-images/checkout-page-07-product-01.jpg"/>
                     </x-checkout.product-list>
 
+                    <dl class="space-y-6 border-t border-white border-opacity-10 pt-6 text-sm font-medium">
+
+                        <x-checkout.summary-item title="Subtotal" value="570,00" />
+                        <x-checkout.summary-item title="Frete" value="50,00" />
+                        <x-checkout.summary-item title="Total" value="620,00" :is-last="true" />
+
+                    </dl>
+
                 </div>
 
             </section>
+
+            <section aria-labelledby="payment-and-shipping-heading"
+                     class="py-16 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:w-full lg:max-w-lg lg:pb-24 lg:pt-0">
+
+                <form>
+                    <div class="mx-auto max-w-2xl px-4 lg:max-w-none lg:px-0">
+
+                        <div>
+
+                            <x-section-title title="Informacoes de contato" />
+
+                            <div class="mt-6">
+                                <x-input-label for="email-address" value="E-mail"/>
+                                <div class="mt-1">
+                                    <x-text-input
+                                        type="email"
+                                        id="email-address"
+                                        name="email"
+                                        autocomplete="email"
+                                        placeholder="Digite seu e-mail"
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="mt-10">
+                                <x-section-title title="Detalhes do pagamento" />
+                                <div class="mt-6 grid grid-cols-3 gap-x-4 gap-y-6 sm:grid-cols-4">
+                                    <div class="col-span-3 sm:col-span-4">
+                                        <x-input-label for="card-number" value="Número do cartão"/>
+                                        <div class="mt-1">
+                                            <x-text-input
+                                                type="text"
+                                                id="card-number"
+                                                name="card-number"
+                                                placeholder="Número do cartão"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-span-2 sm:col-span-3">
+                                        <x-input-label for="expiration-date" value="Data de validade"/>
+                                        <div class="mt-1">
+                                            <x-text-input
+                                                type="text"
+                                                id="expiration-date"
+                                                name="expiration-date"
+                                                placeholder="MM/AA"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <x-input-label for="cvc" value="CVC"/>
+                                        <div class="mt-1">
+                                            <x-text-input
+                                                type="text"
+                                                id="cvc"
+                                                name="cvc"
+                                                placeholder="CVC"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </form>
+
+            </section>
+
         </div>
     </div>
 </x-app-layout>
